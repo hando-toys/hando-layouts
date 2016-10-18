@@ -1,0 +1,71 @@
+.bxs {
+    box-shadow: -3px 0 6px rgba(100,100,100,0.08);
+}
+
+.toolbar {
+    background-color: pink;
+}
+.toolbar .btn {
+}
+
+.page {
+    overflow: hidden;
+}
+
+.btn {
+    cursor: pointer;
+}
+.btn label {
+}
+.btn i {
+
+}
+
+.input {
+    border: 0;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+$font-path: /assets/fonts;
+
+/*
+Font weights:
+Bold = 700  (.fw7)
+Regular = 500 (.fw5)
+Light = 300 (.fw3)
+*/
+
+@font-face {
+    font-family: 'Atlas Grotesk';
+    src: url('AtlasGrotesk-Bold-Web.eot');
+    src: url('#{$font-path}/AtlasGrotesk-Bold-Web.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/AtlasGrotesk-Bold-Web.woff') format('woff');
+    font-weight:  700;
+    font-style:   normal;
+    font-stretch: normal;
+}
+@font-face {
+    font-family: 'Atlas Grotesk';
+    src: url('#{$font-path}/AtlasGrotesk-Regular-Web.eot');
+    src: url('#{$font-path}/AtlasGrotesk-Regular-Web.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/AtlasGrotesk-Regular-Web.woff') format('woff');
+    font-weight:  400;
+    font-style:   normal;
+    font-stretch: normal;
+}
+@font-face {
+    font-family: 'Atlas Grotesk';
+    src: url('#{$font-path}/AtlasGrotesk-Light-Web.eot');
+    src: url('#{$font-path}/AtlasGrotesk-Light-Web.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/AtlasGrotesk-Light-Web.woff') format('woff');
+    font-weight:  300;
+    font-style:   normal;
+    font-stretch: normal;
+}
+
+.atlas { font-family: 'Atlas Grotesk', 'Helvetica Neue', sans-serif; }

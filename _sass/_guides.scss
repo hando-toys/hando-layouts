@@ -1,0 +1,74 @@
+.guide {
+	background-color: lime;
+	display: none;
+	left: 0;
+	position: absolute;
+	top: 0;
+	z-index: 99999;
+
+	&.guide--y {
+		height: 100%;
+		width: 1px;
+
+		&.guide--y-10 {
+			left: 10%;
+		}
+		&.guide--y-20 {
+			left: 20%;
+		}
+		&.guide--y-30 {
+			left: 30%;
+		}
+		&.guide--y-40 {
+			left: 40%;
+		}
+		&.guide--y-50 {
+			left: 50%;
+		}
+		&.guide--y-60 {
+			left: 60%;
+		}
+		&.guide--y-70 {
+			left: 70%;
+		}
+		&.guide--y-80 {
+			left: 80%;
+		}
+	}
+	&.guide--x {
+		height: 1px;
+		width: 100%;
+
+		&.guide--x1 { top: 1rem;}
+		&.guide--x2 { top: 2rem;}
+		&.guide--x3 { top: 3rem;}
+		&.guide--x4 { top: 4rem;}
+		&.guide--x5 { top: 5rem;}
+		&.guide--x6 { top: 6rem;}
+		&.guide--x7 { top: 7rem;}
+		&.guide--x8 { top: 8rem;}
+		&.guide--x9 { top: 9rem;}
+		&.guide--x10 { top: 10rem;}
+
+		&.guide--x1 { bottom: 1rem;}
+		&.guide--x2 { bottom: 2rem;}
+		&.guide--x3 { bottom: 3rem;}
+		&.guide--x4 { bottom: 4rem;}
+		&.guide--x5 { bottom: 5rem;}
+		&.guide--x6 { bottom: 6rem;}
+
+		&.guide--x-10 { top: 10%;}
+		&.guide--x-20 { top: 20%;}
+		&.guide--x-30 { top: 30%;}
+		&.guide--x-40 { top: 40%;}
+		&.guide--x-50 { top: 50%;}
+		&.guide--x-60 { top: 60%;}
+		&.guide--x-70 { top: 70%;}
+		&.guide--x-80 { top: 80%;}
+		&.guide--x-90 { top: 90%;}
+
+		&.guide--x200 { top: 100px;}
+		&.guide--x200 { top: 200px;}
+		&.guide--x300 { top: 300px;}
+	}
+}

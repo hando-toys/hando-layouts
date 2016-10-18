@@ -1,0 +1,179 @@
+.sandbox {
+	//background-color: #EEE;
+	background-color: $white;
+	background-image: url(/assets/images/calypso__dot.svg);
+	background-size: 3px;
+	height: $full;
+	position: absolute;
+	width: $full;
+
+	.sandbox__header,
+	.sandbox__footer {
+		background-color: lime;
+		height: 0;
+		position: absolute;
+		width: $full;
+	}
+	.sandbox__header {
+		top: 0;
+
+		.toggle--zoom {
+			@extend %noselect;
+			cursor: pointer;
+			font-weight: 600;
+			left: 50%;
+			margin-left: -$base*4;
+			padding: $base/2 0;
+			position: absolute;
+			text-align: center;
+			top: $base/4;
+			width: $base*8;
+
+			&.active {
+				color: $green;
+			}
+		}
+	}
+	.sandbox__footer {
+		bottom: 0;
+	}
+
+	.switch {
+		border: solid 1px $black;
+		max-height: 400px;
+		overflow-y: scroll;
+		position: absolute;
+		width: $base*10;
+		z-index: 99999;
+
+		&.switch--nw {
+			left: $base/3;
+			top: $base/3;
+		}
+		&.switch--ne {
+			right: $base/3;
+			top: $base/3;
+		}
+		&.switch--se {
+			bottom: $base/3;
+			right: $base/3;
+		}
+		&.switch--sw {
+			bottom: $base/3;
+			left: $base/3;
+		}
+
+		.toggle--switch {
+			background-color: $white;
+			color: $black;
+			display: block;
+			line-height: $base*1.5;
+			padding: 0 $base/2;
+			position: relative;
+			width: $full;
+
+
+			&::after {
+				@include rotate(-45);
+				@include transform-origin(center);
+				border-bottom: solid 1px $black;
+				border-left: solid 1px $black;
+				//border: solid 1px blue;
+				content:'';
+				height: 8px;
+				position: absolute;
+				right: 14px;
+				top: 10px;
+				width: 8px;
+			}
+		}
+
+		&.visible {
+			.toggle--switch {
+				border-bottom: solid 1px $black;
+				
+				&::after {
+					@include rotate(-225);
+					top: 15px;
+				}
+			}
+			.list {
+				display: block;
+			}
+		}
+
+		.list {
+			@include box-shadow(0,6px,12px,rgba(0,0,0,0.2),$inset:false);
+			border-bottom: 0;
+			display: none;
+			width: $full;
+
+			&.list--select {
+				border-top: 0;
+			}
+			&.list--pivot {
+				display: block;
+				top: 0;
+			}
+			.list__item {
+				background-color: $white;
+				border-bottom: solid 1px $black;
+				color: $black;
+				cursor: pointer;
+				display: block;
+				line-height: $base*1.5;
+				padding: 0 $base/2;
+
+				&:last-child {
+					border-bottom: 0;
+				}
+
+				&:hover {
+					background-color: #EEE;
+					cursor: pointer;
+				}
+				&.active {
+					background-color: $green;
+					color: $white;
+				}
+
+				> a {
+					color: $black;
+					display: block;
+				}
+			}
+		}
+	}
+
+	.sandbox__guide {
+		background-color: lime;
+		bottom: $base/3;
+		display: none;
+		left: 50%;
+		margin: $base;
+		opacity: 0.5;
+		position: absolute;
+
+		&.guide--y12 {
+			height: $base*6;
+			width: $base/2;
+		}
+	}
+
+	.sandbox__canvas {
+		@include flexbox();
+		@include align-content(center);
+		@include align-items(center);
+		@include flex-flow(row nowrap);
+		@include justify-content(center);
+		bottom: $base*3;
+		left: $base;
+		position: absolute;
+		right: $base;
+		top: $base*3;
+
+		.target--zoom {
+			zoom: 300%;
+		}
+	}
+}

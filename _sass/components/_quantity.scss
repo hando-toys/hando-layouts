@@ -1,0 +1,28 @@
+#qty {
+	cursor: pointer;
+
+	#qty__input:focus {
+		outline: none;
+	}
+
+	#qty__input::-webkit-inner-spin-button, 
+	#qty__input::-webkit-outer-spin-button { 
+		-webkit-appearance: none; 
+		margin: 0;
+	}
+
+	#qty__spinner--up,
+	#qty__spinner--down {
+		@include transition(0.15s, all);
+		cursor: pointer;
+		margin: 0 auto;
+		text-indent: -9999em;
+		transform: translate(0, 0) scale(1) rotate(45deg);
+		will-change: transform;
+	}
+
+	#qty__spinner--up:active,
+	#qty__spinner--down:active {
+		transform: translate(0, 0) scale(0.75) rotate(45deg);
+	}
+}

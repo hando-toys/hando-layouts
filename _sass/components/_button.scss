@@ -1,0 +1,14 @@
+#btn {
+	@include transition(0.15s, all);
+	cursor: pointer;
+	padding-bottom: .45rem;
+
+	&:focus {
+		outline: none;
+	}
+
+	&:active {
+		@include scale(0.95);
+
+	}
+}

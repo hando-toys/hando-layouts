@@ -1,0 +1,254 @@
+$white: white;
+$clear: rgba(255,255,255,0.5);
+$black: #222;
+$brown: #ded7cd;
+
+$grey--light: rgba(34,34,34,0.1);
+$grey--mid: #999;
+$grey: #777;
+
+$orange: orangered;
+$lightblue: #bce5f2;
+$blue: #0731b7;
+$green: #00a568;
+$yellow: #fdcd30;
+
+$aqua: #d1efea;
+
+/**
+ * Reset some basic elements
+ */
+body, p, ul, ol, li, em, strong,
+h1, h2, h3, h4, h5, h6, blockquote, 
+hr, dl, dd, figure, input, textarea, 
+button {
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+
+/**
+ * Basic styling
+ */
+* {
+    @include box-sizing(border-box);
+}
+
+/**
+ * Fonts
+ */
+$font-path: /assets/fonts;
+
+@font-face {
+    font-family: 'Atlas Grotesk';
+    src: url('#{$font-path}/AtlasGrotesk-Bold-Web.eot');
+    src: url('#{$font-path}/AtlasGrotesk-Bold-Web.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/AtlasGrotesk-Bold-Web.woff') format('woff');
+    font-weight:  700;
+    font-style:   normal;
+    font-stretch: normal;
+}
+%AtlasGrotesk-Bold {
+    font-family: 'Atlas Grotesk';
+    font-weight:  700;
+    font-style:   normal;
+    font-stretch: normal;
+}
+@font-face {
+    font-family: 'Atlas Grotesk';
+    src: url('#{$font-path}/AtlasGrotesk-Regular-Web.eot');
+    src: url('#{$font-path}/AtlasGrotesk-Regular-Web.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/AtlasGrotesk-Regular-Web.woff') format('woff');
+    font-weight:  400;
+    font-style:   normal;
+    font-stretch: normal;
+}
+%AtlasGrotesk-Regular {
+    font-family: 'Atlas Grotesk';
+    font-weight:  400;
+    font-style:   normal;
+    font-stretch: normal;
+}
+@font-face {
+    font-family: 'Atlas Grotesk';
+    src: url('#{$font-path}/AtlasGrotesk-Light-Web.eot');
+    src: url('#{$font-path}/AtlasGrotesk-Light-Web.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/AtlasGrotesk-Light-Web.woff') format('woff');
+    font-weight:  300;
+    font-style:   normal;
+    font-stretch: normal;
+}
+%AtlasGrotesk-Light {
+    font-family: 'Atlas Grotesk';
+    font-weight:  300;
+    font-style:   normal;
+    font-stretch: normal;
+}
+
+/**
+ * Layout helpers
+ */
+
+$z0: 0;
+$z1: 100;
+$z2: 200;
+$z3: 300;
+$z4: 400;
+$z5: 500;
+$z6: 600;
+$z7: 700;
+$z8: 800;
+
+$golden:          1.618;
+$full:            100%;
+
+$gld10:           $full / $golden;
+$gld9:            $full - $gld10;
+$gld8:            $gld9 / $golden;
+$gld7:            $gld9 - $gld8;
+$gld6:            $gld7 / $golden;
+$gld5:            $gld7 - $gld6;
+$gld4:            $gld5 / $golden;
+$gld3:            $gld5 - $gld4;
+$gld2:            $gld3 / $golden;
+$gld1:            $gld3 - $gld2;
+
+$xlarge:          $full - ($gld7 + $gld7);
+$large:           $gld10;
+$med:             $gld9;
+$small:           $gld8;
+$xsmall:          $gld7;
+
+$base:              24px;
+
+$on-touch:         800px;
+$on-small:        1200px;
+$on-desktop:      1600px;
+
+/**
+ * Typography
+ */
+body {
+    @extend %kerning;
+    -webkit-text-size-adjust: 100%;
+    font-family: 'Atlas Grotesk', 'Helvetica Neue', Arial;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+a {
+    text-decoration: none;
+
+    &:visited {
+        color: initial;
+    }
+}
+
+em {
+    font-style: normal;
+}
+
+.serif {
+    font-family: 'Origami-Regular', Garamond;
+
+    @include media-query($on-touch) {
+    }
+}
+
+.text {
+    font-size: 12px;
+    line-height: 18px;
+
+    &.serif {
+
+    }
+}
+
+.text--h1 {
+    font-family: 'Origami Std';
+    font-size: $base*1.5;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 54px;
+}
+
+.text--h2 {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 30px;
+
+    strong {
+        font-weight: 500;
+    }
+    .small {
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+    .serif,
+    &.serif {
+        font-size: 30px;
+    }
+
+    @include media-query($on-touch) {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+.text--h3 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+
+    &.serif {
+        font-weight: 300;
+    }
+
+    strong {
+        font-weight: 600;
+    }
+
+    @include media-query($on-touch) {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+.text--h4 {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+
+h5, .text--h5 {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    .serif {
+        font-size: 14px;
+    }
+}
+
+article {
+	.text--link {
+		border-bottom: solid 2px blue;
+	}
+}
+
+.pull--right {
+	float: right;
+}
+
+@include keyframes(markRotate) {
+	0% {@include rotate(0)};
+	100% {@include rotate(360)};
+}
+
