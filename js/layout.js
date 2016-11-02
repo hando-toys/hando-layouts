@@ -4,7 +4,7 @@ $(document).ready(function(){
 	// Button
 
 	// Quantity
-	$('#qty__input').focus();
+	//$('#qty__input').focus();
 	$('#qty__spinner--up').click(function(){
         var $qty=$('#qty__input');
         var currentVal = parseInt($qty.val());
