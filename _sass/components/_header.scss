@@ -1,0 +1,32 @@
+.header {
+	@extend %clearfix;
+	margin-bottom: $base;
+	padding: $base*1.5 $base 0 $base;
+	position: relative;
+
+	.header__menu {
+		display: block;
+		float: left;
+		position: relative;
+		width: 25%;
+	}
+	.header__logo {
+		display: block;
+		height: $base*2;
+		float: left;
+		text-align: center;
+		width: 50%;
+
+		svg {
+			@include scale(0.35);
+			fill: black;
+			height: $full;
+			width: auto;
+		}
+	}
+	.header__cart {
+		display: block;
+		float: right;
+		width: 25%;
+	}
+}

@@ -1,36 +1,3 @@
-.bxs {
-    box-shadow: -3px 0 6px rgba(100,100,100,0.08);
-}
-
-.toolbar {
-    background-color: pink;
-}
-.toolbar .btn {
-}
-
-.page {
-    overflow: hidden;
-}
-
-.btn {
-    cursor: pointer;
-}
-.btn label {
-}
-.btn i {
-
-}
-
-.input {
-    border: 0;
-    margin: 0;
-    padding: 0;
-
-    &:focus {
-        outline: none;
-    }
-}
-
 $font-path: /assets/fonts;
 
 /*
@@ -69,3 +36,69 @@ Light = 300 (.fw3)
 }
 
 .atlas { font-family: 'Atlas Grotesk', 'Helvetica Neue', sans-serif; }
+
+.list {
+    &.list--h3 {
+        li {
+            @extend .text--h3;
+            line-height: $base;
+        }
+    }
+    &.list--h4 {
+        li {
+            @extend .text--h4;
+            line-height: $base;
+        }
+    }
+
+    li {
+        a {
+            display: block;
+        }
+    }
+}
+
+.grid {
+    @extend %clearfix;
+    border: solid $base*0.75 transparent;
+    position: relative;
+
+    .grid__item {
+        border: solid $base/4 transparent;
+        display: block;
+        float: left;
+        overflow: hidden;
+        position: relative;
+        width: 25%;
+
+        > figure {
+            @extend %noselect;
+            @include transitionEase(0.5s, all);
+            > img {
+                display: block;
+                height: auto;
+                width: $full;
+            }
+        }
+        > figcaption {
+            @include transitionEase(0.5s, all);
+            @include translate(-1px,6px);
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            padding: $base/2;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        &:hover {
+            > figure {
+                opacity: 0.15;
+            }
+            > figcaption {
+                opacity: 1;
+            }
+        }
+    }
+}

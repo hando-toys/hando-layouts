@@ -1,44 +1,16 @@
 body {
-}
-
-#header {
-	z-index: 1000;
-}
-
-#product__action {
-	guide1 {
-		background-color: lime;
-		height: 1px;
+	&.index {
+		bottom: 0;
 		left: 0;
 		position: absolute;
-		top: 14px;
-		width: 100%;
-	}
-	guide2 {
-		background-color: lime;
-		height: 1px;
-		left: 0;
-		position: absolute;
-		top: 3px;
-		width: 100%;
+		right: 0;
+		top: 0;
 	}
 }
 
-
-
-#product__qty {
-	@include translate(-12px,-18px);
-	//transform: translate(-12px, -18px);
+.hero {
+	height: $full;
+	margin-top: $base*-6;
+	padding-top: $base*4;
+	text-align: center;
 }
-
-#product__add {
-	@include translate(6px,-5px);
-}
-
-#product__extended {
-
-}
-
-
-// Extend Tachyons
-

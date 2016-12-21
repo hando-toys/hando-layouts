@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+    $('.test').click(function(){
+        var target = $('.list--collections');
+        $(target).toggleClass('visible');
+        $(this).toggleClass('active');
+    });
 
 	// Button
 
@@ -19,6 +24,5 @@ $(document).ready(function(){
             $qty.val(currentVal - 1);
         }
     });
-
 
 });

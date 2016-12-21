@@ -1,0 +1,26 @@
+.cart__toggle {
+	float: right;
+	line-height: $base*2;
+	padding: 0 $base*2.5;
+	position: relative;
+
+	.cart__count {
+		display: block;
+		line-height: $base*2;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 0;
+		width: $base*2;
+
+		.cart__frame {
+			@include rotate(45);
+			border: solid 1px $black;
+			height: $base*1.5;
+			left: $base/4;
+			position: absolute;
+			top: $base/4;
+			width: $base*1.5;
+		}
+	}
+}

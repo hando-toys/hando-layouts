@@ -1,0 +1,10 @@
+.footer__subscribe {
+	padding: 0 $base/2;
+
+	.input {
+		border: solid 1px $black;
+		line-height: 46px;
+		padding: 0 $base/2;
+		width: $full;
+	}
+}

@@ -15,6 +15,10 @@ $yellow: #fdcd30;
 
 $aqua: #d1efea;
 
+
+
+$contrast: #eee;
+
 /**
  * Reset some basic elements
  */
@@ -189,10 +193,6 @@ em {
         font-size: 16px;
         text-transform: uppercase;
     }
-    .serif,
-    &.serif {
-        font-size: 30px;
-    }
 
     @include media-query($on-touch) {
         font-size: 18px;
@@ -201,13 +201,8 @@ em {
 }
 
 .text--h3 {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
-    line-height: 24px;
-
-    &.serif {
-        font-weight: 300;
-    }
 
     strong {
         font-weight: 600;
@@ -222,6 +217,7 @@ em {
 .text--h4 {
     font-size: 12px;
     font-weight: 500;
+    letter-spacing: 1px;
     line-height: 18px;
     text-transform: uppercase;
 }

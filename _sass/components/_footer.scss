@@ -1,0 +1,52 @@
+.footer--fixed {
+	.footer {
+		bottom: 0;
+		height: $base*4;
+		position: absolute;
+		width: $full;
+
+		.footer__menu {
+			bottom: $base*2;
+			position: absolute;
+		}
+		.footer__subscribe {
+			top: 0;
+		}
+		.footer__support {
+			top: initial;
+		}
+	}
+}
+
+.footer {
+	@extend %clearfix;
+	display: block;
+	padding-bottom: $base*2;
+	position: relative;
+
+	.footer__menu {
+		float: left;
+		padding-left: $base*2;
+		width: 25%;
+
+		.list {
+		}
+	}
+	.footer__subscribe {
+		height: $base*2;
+		left: 25%;
+		position: absolute;
+		width: 50%;
+	}
+	.footer__support {
+		border: solid 1px $black;
+		border-radius: 50%;
+		bottom: $base*2;
+		height: $base*2;
+		position: absolute;
+		right: 28px;
+		text-indent: -9999em;
+		top: 0;
+		width: $base*2;
+	}
+}

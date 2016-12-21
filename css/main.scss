@@ -10,11 +10,20 @@
 // }
 
 @import
+	"calypso/prefixer",
+	"calypso/mixins",
+	"calypso/base",
 	"base",
 	"guides",
-	"calypso/mixins",
-    "tachyons/tachyons",
     "index",
+    "collection",
+    "product",
+    "page",
+    "components/header",
+    "components/footer",
     "components/quantity",
-    "components/button"
+    "components/button",
+    "components/cart",
+    "components/subscribe",
+    "components/menu--collections"
 ;
