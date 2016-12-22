@@ -60,33 +60,46 @@ Light = 300 (.fw3)
 
 .grid {
     @extend %clearfix;
-    border: solid $base*0.75 transparent;
     position: relative;
 
     .grid__item {
-        border: solid $base/4 transparent;
         display: block;
         float: left;
         overflow: hidden;
+        padding: $base/2;
         position: relative;
         width: 25%;
 
         > figure {
             @extend %noselect;
             @include transitionEase(0.5s, all);
+            position: relative;
+
             > img {
                 display: block;
                 height: auto;
                 width: $full;
             }
+
+            &::after {
+                border: solid 1px red;
+                bottom: $base/2;
+                content:'';
+                display: none;
+                left: $base/2;
+                position: absolute;
+                right: $base/2;
+                top: $base/2;
+
+            }
         }
         > figcaption {
             @include transitionEase(0.5s, all);
-            @include translate(-1px,6px);
+            @include translate(0px,-3px);
             bottom: 0;
             left: 0;
             opacity: 0;
-            padding: $base/2;
+            padding: $base;
             position: absolute;
             right: 0;
             top: 0;

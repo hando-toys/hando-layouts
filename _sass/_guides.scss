@@ -1,6 +1,10 @@
+.guide,
+.margin {
+	display: none;
+}
+
 .guide {
 	background-color: lime;
-	display: none;
 	left: 0;
 	position: absolute;
 	top: 0;
@@ -15,6 +19,9 @@
 		}
 		&.guide--y-20 {
 			left: 20%;
+		}
+		&.guide--y-25 {
+			left: 25%;
 		}
 		&.guide--y-30 {
 			left: 30%;
@@ -31,8 +38,26 @@
 		&.guide--y-70 {
 			left: 70%;
 		}
+		&.guide--y-75 {
+			left: 75%;
+		}
 		&.guide--y-80 {
 			left: 80%;
+		}
+
+		&.guide--y24 {
+			left: $base;
+		}
+		&.guide--y48 {
+			left: $base*2;
+		}
+		&.guide--y24r {
+			left: initial;
+			right: $base;
+		}
+		&.guide--yXXr {
+			left: initial;
+			right: 47px;
 		}
 	}
 	&.guide--x {
@@ -67,8 +92,43 @@
 		&.guide--x-80 { top: 80%;}
 		&.guide--x-90 { top: 90%;}
 
+
+		&.guide--x24 { top: 24px;}
+		&.guide--x48 { top: 48px;}
+		&.guide--x72 { top: 72px;}
+		&.guide--x96 { top: 96px;}
+
+		&.guide--x48b { bottom: 48px; top: initial;}
+
 		&.guide--x200 { top: 100px;}
 		&.guide--x200 { top: 200px;}
 		&.guide--x300 { top: 300px;}
+	}
+}
+
+.margin {
+	background-color: rgba(255,0,0,0.5);
+	left: 0;
+	height: $full;
+	margin-left: -$base/2;
+	position: absolute;
+	top: 0;
+	width: $base;
+	z-index: 99999;
+
+	&.margin--0 {
+
+	}
+	&.margin--25 {
+		left: 25%;
+	}
+	&.margin--50 {
+		left: 50%;
+	}
+	&.margin--75 {
+		left: 75%;
+	}
+	&.margin--100 {
+		left: 100%;
 	}
 }

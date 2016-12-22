@@ -3,13 +3,14 @@
 
     {% include head.html %}
 
-    <body class="atlas footer--{{ page.footer }}">
+    <body class="atlas header--{{ page.header }} footer--{{ page.footer }}">
 
-    	{% include header.html %}
-
-        {{ content }}
-
-    	{% include footer.html %}
+    	<div class="container">
+    		{% include header.html %}
+        	{{ content }}
+    		{% include footer.html %}
+    		{% include guides.html %}
+    	</div>
 
     </body>
 

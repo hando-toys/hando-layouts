@@ -1,7 +1,14 @@
+.header--fixed {
+	.header {
+		position: absolute;
+		width: $full;
+		z-index: 9999;
+	}
+}
+
 .header {
 	@extend %clearfix;
-	margin-bottom: $base;
-	padding: $base*1.5 $base 0 $base;
+	padding: $base*1.5 $base;
 	position: relative;
 
 	.header__menu {

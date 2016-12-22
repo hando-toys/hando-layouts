@@ -2,43 +2,75 @@
 layout: index
 ---
 
-<figure class="db w-100 vh-100 ma0 bg-blue cover bg-center" style="background-image:url(/assets/images/hando-hero01b.jpg");">
-	
-</figure>
+<div class="product__top">
 
-<section class="absolute w-50 pa4 top-0 bottom-0 right-0 top-0" id="product__summary">
-	<article class="relative">
-		<p class="ma0 mb3 lh-copy pb1 bb b--hando-20"><span class="f3 fw2">$50</span> <span class="f7 ttu tracked"> tax included</span></p>
-		<p class="f5 ma0 mb1 b tracked-narrow">Tethered Blocks</p>
-		<p class="f5 ma0 mb1"><span class="f7 ttu tracked">Designed by</span> Nils Berger, Denmark</p>
-		<p class="f5 ma0 mb3"><span class="f7 ttu tracked">Made in</span> Latvia</p>
-		<p class="f5 ma0 mb3 lh-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-		<p class="cf ma0 mb1">
-			<span class="fl f7 pt1 ttu tracked w-40 noselect">Availability</span>
-			<span class="fl f5"> variable</span>
+	<figure class="product__gallery" style="background-image:url(/assets/images/hando-hero01b.jpg");">
+	</figure>
+	
+	<div class="product__data">
+		<p class="product__price">
+			<span class="text--h3">$50</span>
+			<span class="text--h4">CAD</span>
 		</p>
-		<p class="cf ma0 mb1">
-			<span class="fl f7 pt1 ttu tracked w-40 noselect">Dimensions</span>
-			<span class="fl f5"> variable</span>
+		<p class="text--h3 product__title"><strong>Tethered Blocks</strong></p>
+		<p class="text--h3 product__designer"><span class="text--h4">Designed by</span> Nils Berger, Denmark</p>
+		<p class="text--h3 product__origin"><span class="text--h4">Made in</span> Latvia</p>
+		<p class="text--h3 product__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+
+		<p class="product__data-pair">
+			<span class="text--h4 pair_variable">Availability</span>
+			<span class="text--h3 pair__value"> variable</span>
 		</p>
-		<p class="cf ma0 mb5 bg-purple">
-			<span class="fl f7 pt1 ttu tracked w-40 noselect">Ages</span>
-			<span class="fl f5"> variable</span>
+		<p class="product__data-pair">
+			<span class="text--h4 pair_variable">Dimensions</span>
+			<span class="text--h3 pair__value"> variable</span>
 		</p>
-		<p class="relative cf ma0 bg-pink" id="product__action">
-			<span class="fl f7 pt1 ttu tracked w-40 noselect">Quantity</span>
+		<p class="product__data-pair">
+			<span class="text--h4 pair_variable">Ages</span>
+			<span class="text--h3 pair__value"> variable</span>
+		</p>
+		<p class="product__action">
+			<span class="text--h4">Quantity</span>
 			<span class="fl cf bg-red">
 				<span class="dib fl" id="product__qty">{% include components/quantity.html %}</span>
 				<span class="dib fl" id="product__add">{% include components/button.html %}</span>
 			</span>
-			<guide1></guide1>
-			<guide2></guide2>
 		</p>
-	</article>
-</section>
+	</div>
+</div>
 
-<section id="container">
-
+<div class="product__extended">
 	{{ content }}
+</div>
 
-</section>
+<div class="product__related collection grid">
+
+	<a href="/product" class="grid__item">
+		<figure><img src="/assets/images/fw16-OS1001-A-thumb.jpg" ></figure>
+		<figcaption>
+			<span class="text--h3">Very Very Long Annoying Product Name</span>
+		</figcaption>
+	</a>
+
+	<a href="/product" class="grid__item">
+		<figure><img src="/assets/images/fw16-OS1001-A-thumb.jpg" ></figure>
+		<figcaption>
+			<span class="text--h3">Very Very Long Annoying Product Name</span>
+		</figcaption>
+	</a>
+
+	<a href="/product" class="grid__item">
+		<figure><img src="/assets/images/fw16-OS1001-A-thumb.jpg" ></figure>
+		<figcaption>
+			<span class="text--h3">Very Very Long Annoying Product Name</span>
+		</figcaption>
+	</a>
+
+	<a href="/product" class="grid__item">
+		<figure><img src="/assets/images/fw16-OS1001-A-thumb.jpg" ></figure>
+		<figcaption>
+			<span class="text--h3">Very Very Long Annoying Product Name</span>
+		</figcaption>
+	</a>
+
+</div>

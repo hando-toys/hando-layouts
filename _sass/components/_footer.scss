@@ -4,6 +4,7 @@
 		height: $base*4;
 		position: absolute;
 		width: $full;
+		z-index: 9999;
 
 		.footer__menu {
 			bottom: $base*2;
@@ -21,7 +22,8 @@
 .footer {
 	@extend %clearfix;
 	display: block;
-	padding-bottom: $base*2;
+	padding: $base 0;
+	padding-bottom: $base*1.5;
 	position: relative;
 
 	.footer__menu {
@@ -33,10 +35,11 @@
 		}
 	}
 	.footer__subscribe {
+		display: none;
 		height: $base*2;
-		left: 25%;
+		left: 37.5%;
 		position: absolute;
-		width: 50%;
+		width: 25%;
 	}
 	.footer__support {
 		border: solid 1px $black;
@@ -44,9 +47,9 @@
 		bottom: $base*2;
 		height: $base*2;
 		position: absolute;
-		right: 28px;
+		right: $base;
 		text-indent: -9999em;
-		top: 0;
+		top: $base;
 		width: $base*2;
 	}
 }
