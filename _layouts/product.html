@@ -1,36 +1,47 @@
 ---
 layout: index
+header: fixed
 ---
 
-<div class="product__top">
+<div class="product__gallery">
+	<figure class="product__image" style="background-image:url(/assets/images/fw16-PF1001-A.jpg");"></figure>
+	<div class="container gallery__frame">
+		<a href="#" class="gallery__trigger">1</a>
+		<a href="#" class="gallery__trigger">2</a>
+		<a href="#" class="gallery__trigger">3</a>
+		{% include guides.html %}
+	</div>
+</div>
 
-	<figure class="product__gallery" style="background-image:url(/assets/images/hando-hero01b.jpg");">
-	</figure>
-	
-	<div class="product__data">
-		<p class="product__price">
+<div class="container product__data">
+	<div class="data__container">
+		<p class="product__block product__price">
 			<span class="text--h3">$50</span>
-			<span class="text--h4">CAD</span>
+			<span class="text--h5">CAD</span>
 		</p>
-		<p class="text--h3 product__title"><strong>Tethered Blocks</strong></p>
-		<p class="text--h3 product__designer"><span class="text--h4">Designed by</span> Nils Berger, Denmark</p>
-		<p class="text--h3 product__origin"><span class="text--h4">Made in</span> Latvia</p>
-		<p class="text--h3 product__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-
-		<p class="product__data-pair">
-			<span class="text--h4 pair_variable">Availability</span>
-			<span class="text--h3 pair__value"> variable</span>
+		<p class="product__block text product__title"><strong>Archipelago</strong></p>
+		<p class="product__block text product__designer"><span class="text--h5">Designed by</span> Permafrost, Norway</p>
+		<p class="product__block text product__origin"><span class="text--h5">Made in</span> Norway</p>
+	
+		<div class="product__block product__description">
+			<p class="product__block text product__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+		
+			<p class="product__block product__data-pair">
+				<span class="text--h5 pair_variable">Dimensions</span>
+				<span class="text pair__value"> variable</span>
+			</p>
+			<p class="product__block product__data-pair">
+				<span class="text--h5 pair_variable">Ages</span>
+				<span class="text pair__value"> variable</span>
+			</p>
+		</div>
+	
+		<p class="product__block product__data-pair">
+			<span class="text--h5 pair_variable">Availability</span>
+			<span class="text pair__value"> variable</span>
 		</p>
-		<p class="product__data-pair">
-			<span class="text--h4 pair_variable">Dimensions</span>
-			<span class="text--h3 pair__value"> variable</span>
-		</p>
-		<p class="product__data-pair">
-			<span class="text--h4 pair_variable">Ages</span>
-			<span class="text--h3 pair__value"> variable</span>
-		</p>
-		<p class="product__action">
-			<span class="text--h4">Quantity</span>
+		<p class="product__block product__action">
+			<span class="text--h5">Quantity</span>
 			<span class="fl cf bg-red">
 				<span class="dib fl" id="product__qty">{% include components/quantity.html %}</span>
 				<span class="dib fl" id="product__add">{% include components/button.html %}</span>
@@ -38,12 +49,12 @@ layout: index
 		</p>
 	</div>
 </div>
-
-<div class="product__extended">
+	
+<div class="container">
 	{{ content }}
 </div>
-
-<div class="product__related collection grid">
+	
+<div class="container product__related collection grid">
 
 	<a href="/product" class="grid__item">
 		<figure><img src="/assets/images/fw16-OS1001-A-thumb.jpg" ></figure>

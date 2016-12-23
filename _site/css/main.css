@@ -95,8 +95,11 @@ em {
   font-family: 'Origami-Regular', Garamond; }
 
 .text {
-  font-size: 12px;
-  line-height: 18px; }
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px; }
+  .text strong {
+    font-weight: 600; }
 
 .text--h1 {
   font-family: 'Origami Std';
@@ -140,10 +143,10 @@ em {
 h5, .text--h5 {
   font-size: 10px;
   font-weight: 500;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase; }
-  h5 .serif, .text--h5 .serif {
-    font-size: 14px; }
+  h5 strong, .text--h5 strong {
+    font-weight: 600; }
 
 article .text--link {
   border-bottom: solid 2px blue; }
@@ -259,14 +262,14 @@ Light = 300 (.fw3)
     display: block;
     float: left;
     overflow: hidden;
-    padding: 12px;
+    padding: 6px;
     position: relative;
     width: 25%; }
     .grid .grid__item > figure {
-      -webkit-transition: 0.5s all ease-in-out;
-      -moz-transition: 0.5s all ease-in-out;
-      -o-transition: 0.5s all ease-in-out;
-      transition: 0.5s all ease-in-out;
+      -webkit-transition: 0.35s all ease-in-out;
+      -moz-transition: 0.35s all ease-in-out;
+      -o-transition: 0.35s all ease-in-out;
+      transition: 0.35s all ease-in-out;
       position: relative; }
       .grid .grid__item > figure > img {
         display: block;
@@ -286,21 +289,50 @@ Light = 300 (.fw3)
       -moz-transition: 0.5s all ease-in-out;
       -o-transition: 0.5s all ease-in-out;
       transition: 0.5s all ease-in-out;
-      -moz-transform: translate(0px, -3px);
-      -o-transform: translate(0px, -3px);
-      -ms-transform: translate(0px, -3px);
-      -webkit-transform: translate(0px, -3px);
-      transform: translate(0px, -3px);
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-content: center;
+      -moz-align-content: center;
+      align-content: center;
+      -ms-flex-line-pack: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-flex-flow: column nowrap;
+      -moz-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      justify-content: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       bottom: 0;
       left: 0;
       opacity: 0;
-      padding: 24px;
       position: absolute;
       right: 0;
+      text-align: center;
       top: 0; }
+      .grid .grid__item > figcaption > span {
+        padding: 0 24px; }
     .grid .grid__item:hover > figure {
-      opacity: 0.15; }
+      -moz-transform: scale(1.02);
+      -o-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+      -webkit-transform: scale(1.02);
+      transform: scale(1.02);
+      opacity: 0.05; }
     .grid .grid__item:hover > figcaption {
+      -webkit-transition: 0.75s all ease-in-out;
+      -moz-transition: 0.75s all ease-in-out;
+      -o-transition: 0.75s all ease-in-out;
+      transition: 0.75s all ease-in-out;
       opacity: 1; }
 
 .guide,
@@ -435,19 +467,20 @@ Light = 300 (.fw3)
   .margin.margin--100 {
     left: 100%; }
 
-.footer--fixed .container {
-  bottom: 0;
-  left: 0;
-  margin: 0;
-  max-width: initial;
-  position: absolute;
-  right: 0;
-  top: 0; }
+.header--fixed,
+.footer--fixed {
+  height: 100%;
+  position: relative; }
+  .header--fixed .container,
+  .footer--fixed .container {
+    left: 50%;
+    margin-left: -600px; }
 
 .container {
   margin: 0 auto;
-  max-width: 1400px;
-  position: relative; }
+  max-width: 1200px;
+  position: relative;
+  width: 1200px; }
 
 .hero {
   display: -webkit-box;
@@ -489,66 +522,105 @@ Light = 300 (.fw3)
     cursor: pointer;
     display: block;
     height: 65%;
-    text-indent: -9999em;
     width: 75%; }
 
-.product__top {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-content: center;
-  -moz-align-content: center;
-  align-content: center;
-  -ms-flex-line-pack: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-flex-flow: row nowrap;
-  -moz-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  justify-content: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  display: block;
-  height: 100%;
-  min-height: 800px;
-  overflow: hidden;
-  position: relative;
-  width: 100%; }
+.collection {
+  padding: 0 6px; }
 
 .product__gallery {
-  background-color: blue;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  bottom: 12px;
-  left: 12px;
-  min-height: 800px;
-  position: absolute;
-  right: 12px;
-  top: 12px;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
   z-index: 100; }
+  .product__gallery .product__image {
+    background-position: 100% center;
+    background-repeat: no-repeat;
+    background-size: 125% auto;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0; }
+  .product__gallery .gallery__frame {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-content: flex-start;
+    -moz-align-content: flex-start;
+    align-content: flex-start;
+    -ms-flex-line-pack: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-flex-flow: column wrap;
+    -moz-flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    height: 100%; }
+    .product__gallery .gallery__frame .gallery__trigger {
+      background-color: transparent;
+      border: solid 1px #222;
+      border-radius: 50%;
+      height: 12px;
+      margin: 12px 26px;
+      text-indent: -9999em;
+      width: 12px; }
 
 .product__data {
   height: 100%;
-  left: 62.5%;
-  padding: 48px 0;
   position: absolute;
-  width: 25%;
-  z-index: 9999; }
+  top: 0;
+  z-index: 999; }
+  .product__data .data__container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-content: flex-start;
+    -moz-align-content: flex-start;
+    align-content: flex-start;
+    -ms-flex-line-pack: start;
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    align-items: flex-end;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    -webkit-flex-flow: column nowrap;
+    -moz-flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    bottom: 0;
+    padding-left: 12px;
+    padding-right: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25%; }
+  .product__data .product__block {
+    display: block;
+    width: 100%; }
   .product__data .product__price {
     border-bottom: solid 1px #222;
-    line-height: 48px;
-    margin-bottom: 20px; }
+    line-height: 24px;
+    margin-bottom: 12px; }
   .product__data .product__origin {
-    margin-bottom: 20px; }
+    margin-bottom: 24px; }
   .product__data .product__body {
     margin-bottom: 24px; }
   .product__data .product__data-pair {
@@ -559,11 +631,14 @@ Light = 300 (.fw3)
       line-height: 24px;
       width: 50%; }
   .product__data .product__action {
-    padding: 24px 0; }
+    padding-top: 24px; }
+
+.container__block {
+  display: block;
+  height: 400px; }
 
 .header--fixed .header {
   position: absolute;
-  width: 100%;
   z-index: 9999; }
 
 .header {
@@ -598,7 +673,7 @@ Light = 300 (.fw3)
   bottom: 0;
   height: 96px;
   position: absolute;
-  width: 100%;
+  top: initial;
   z-index: 9999; }
   .footer--fixed .footer .footer__menu {
     bottom: 48px;
@@ -713,6 +788,9 @@ Light = 300 (.fw3)
     width: 100%; }
     .footer__subscribe .input:focus {
       outline: 0; }
+
+.collection .grid__item .text--h5 {
+  margin-bottom: 3px; }
 
 .menu--collections .toggle--collections {
   cursor: pointer;

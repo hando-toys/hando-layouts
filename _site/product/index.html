@@ -23,10 +23,9 @@
 </head>
 
 
-    <body class="atlas header-- footer--">
+    <body class="atlas header--fixed footer--">
 
-    	<div class="container">
-    		<header class="header">
+    	<header class="container header">
 	<span class="header__menu">
 		<nav class="menu--collections">
 	<a href="#" class="toggle--collections text--h4">Shop</a>
@@ -52,100 +51,13 @@
 </a>
 	</span>
 </header>
-        	<div class="product__top">
-
-	<figure class="product__gallery" style="background-image:url(/assets/images/hando-hero01b.jpg");">
-	</figure>
-	
-	<div class="product__data">
-		<p class="product__price">
-			<span class="text--h3">$50</span>
-			<span class="text--h4">CAD</span>
-		</p>
-		<p class="text--h3 product__title"><strong>Tethered Blocks</strong></p>
-		<p class="text--h3 product__designer"><span class="text--h4">Designed by</span> Nils Berger, Denmark</p>
-		<p class="text--h3 product__origin"><span class="text--h4">Made in</span> Latvia</p>
-		<p class="text--h3 product__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-
-		<p class="product__data-pair">
-			<span class="text--h4 pair_variable">Availability</span>
-			<span class="text--h3 pair__value"> variable</span>
-		</p>
-		<p class="product__data-pair">
-			<span class="text--h4 pair_variable">Dimensions</span>
-			<span class="text--h3 pair__value"> variable</span>
-		</p>
-		<p class="product__data-pair">
-			<span class="text--h4 pair_variable">Ages</span>
-			<span class="text--h3 pair__value"> variable</span>
-		</p>
-		<p class="product__action">
-			<span class="text--h4">Quantity</span>
-			<span class="fl cf bg-red">
-				<span class="dib fl" id="product__qty"><span id="qty" class="relative dib">
-
-	<span class="db w1 h1 bl bt b--hando" id="qty__spinner--up">up</span>
-	<input type="number" value="1" min="1" max="99" class="input-reset tc f5 atlas ma0 bn w2 bg-transparent" id="qty__input">
-	<span class="db w1 h1 bb br b--hando" id="qty__spinner--down">down</span>
-
-</span></span>
-				<span class="dib fl" id="product__add"><button class="button-reset pa2 ba b--hando hando bg-transparent f7 ttu tracked" id="btn">Add to cart</button></span>
-			</span>
-		</p>
-	</div>
-</div>
-
-<div class="product__extended">
-	
-</div>
-
-<div class="product__related collection grid">
-
-	<a href="/product" class="grid__item">
-		<figure><img src="/assets/images/fw16-OS1001-A-thumb.jpg" ></figure>
-		<figcaption>
-			<span class="text--h3">Very Very Long Annoying Product Name</span>
-		</figcaption>
-	</a>
-
-	<a href="/product" class="grid__item">
-		<figure><img src="/assets/images/fw16-OS1001-A-thumb.jpg" ></figure>
-		<figcaption>
-			<span class="text--h3">Very Very Long Annoying Product Name</span>
-		</figcaption>
-	</a>
-
-	<a href="/product" class="grid__item">
-		<figure><img src="/assets/images/fw16-OS1001-A-thumb.jpg" ></figure>
-		<figcaption>
-			<span class="text--h3">Very Very Long Annoying Product Name</span>
-		</figcaption>
-	</a>
-
-	<a href="/product" class="grid__item">
-		<figure><img src="/assets/images/fw16-OS1001-A-thumb.jpg" ></figure>
-		<figcaption>
-			<span class="text--h3">Very Very Long Annoying Product Name</span>
-		</figcaption>
-	</a>
-
-</div>
-    		<footer class="footer">
-	<div class="footer__menu">
-		<ul class="list list--h4">
-			<li><a href="#">About</a></li>
-			<li><a href="#">FAQ</a></li>
-			<li><a href="#">Shipping</a></li>
-			<li><a href="#">Returns</a></li>
-			<li><a href="#">Terms</a></li>
-		</ul>
-	</div>
-	<div class="footer__subscribe">
-		<input type="text" class="input" placeholder="" value="Sign up for our newsletter">
-	</div>
-	<div class="footer__support">support</div>
-</footer>
-    		<span class="margin margin--0"></span>
+        <div class="product__gallery">
+	<figure class="product__image" style="background-image:url(/assets/images/fw16-PF1001-A.jpg");"></figure>
+	<div class="container gallery__frame">
+		<a href="#" class="gallery__trigger">1</a>
+		<a href="#" class="gallery__trigger">2</a>
+		<a href="#" class="gallery__trigger">3</a>
+		<span class="margin margin--0"></span>
 <span class="margin margin--25"></span>
 <span class="margin margin--50"></span>
 <span class="margin margin--75"></span>
@@ -160,7 +72,118 @@
 <span class="guide guide--x guide--x72"></span>
 <span class="guide guide--x guide--x96"></span>
 <span class="guide guide--x guide--x48b"></span>
-    	</div>
+	</div>
+</div>
+
+<div class="container product__data">
+	<div class="data__container">
+		<p class="product__block product__price">
+			<span class="text--h3">$50</span>
+			<span class="text--h5">CAD</span>
+		</p>
+		<p class="product__block text product__title"><strong>Archipelago</strong></p>
+		<p class="product__block text product__designer"><span class="text--h5">Designed by</span> Permafrost, Norway</p>
+		<p class="product__block text product__origin"><span class="text--h5">Made in</span> Norway</p>
+	
+		<div class="product__block product__description">
+			<p class="product__block text product__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+		
+			<p class="product__block product__data-pair">
+				<span class="text--h5 pair_variable">Dimensions</span>
+				<span class="text pair__value"> variable</span>
+			</p>
+			<p class="product__block product__data-pair">
+				<span class="text--h5 pair_variable">Ages</span>
+				<span class="text pair__value"> variable</span>
+			</p>
+		</div>
+	
+		<p class="product__block product__data-pair">
+			<span class="text--h5 pair_variable">Availability</span>
+			<span class="text pair__value"> variable</span>
+		</p>
+		<p class="product__block product__action">
+			<span class="text--h5">Quantity</span>
+			<span class="fl cf bg-red">
+				<span class="dib fl" id="product__qty"><span id="qty" class="relative dib">
+
+	<span class="db w1 h1 bl bt b--hando" id="qty__spinner--up">up</span>
+	<input type="number" value="1" min="1" max="99" class="input-reset tc f5 atlas ma0 bn w2 bg-transparent" id="qty__input">
+	<span class="db w1 h1 bb br b--hando" id="qty__spinner--down">down</span>
+
+</span></span>
+				<span class="dib fl" id="product__add"><button class="button-reset pa2 ba b--hando hando bg-transparent f7 ttu tracked" id="btn">Add to cart</button></span>
+			</span>
+		</p>
+	</div>
+</div>
+	
+<div class="container">
+	<div class="container__block product__extended">product extended</div>
+<div class="container__block product__mfg">product mfg</div>
+</div>
+	
+<div class="container product__related collection grid">
+
+	<a href="/product" class="grid__item">
+		<figure><img src="/assets/images/fw16-OS1001-A-thumb.jpg" ></figure>
+		<figcaption>
+			<span class="text--h3">Very Very Long Annoying Product Name</span>
+		</figcaption>
+	</a>
+
+	<a href="/product" class="grid__item">
+		<figure><img src="/assets/images/fw16-OS1001-A-thumb.jpg" ></figure>
+		<figcaption>
+			<span class="text--h3">Very Very Long Annoying Product Name</span>
+		</figcaption>
+	</a>
+
+	<a href="/product" class="grid__item">
+		<figure><img src="/assets/images/fw16-OS1001-A-thumb.jpg" ></figure>
+		<figcaption>
+			<span class="text--h3">Very Very Long Annoying Product Name</span>
+		</figcaption>
+	</a>
+
+	<a href="/product" class="grid__item">
+		<figure><img src="/assets/images/fw16-OS1001-A-thumb.jpg" ></figure>
+		<figcaption>
+			<span class="text--h3">Very Very Long Annoying Product Name</span>
+		</figcaption>
+	</a>
+
+</div>
+    	<footer class="container footer">
+	<div class="footer__menu">
+		<ul class="list list--h4">
+			<li><a href="#">About</a></li>
+			<li><a href="#">FAQ</a></li>
+			<li><a href="#">Shipping</a></li>
+			<li><a href="#">Returns</a></li>
+			<li><a href="#">Terms</a></li>
+		</ul>
+	</div>
+	<div class="footer__subscribe">
+		<input type="text" class="input" placeholder="" value="Sign up for our newsletter">
+	</div>
+	<div class="footer__support">support</div>
+	<span class="margin margin--0"></span>
+<span class="margin margin--25"></span>
+<span class="margin margin--50"></span>
+<span class="margin margin--75"></span>
+<span class="margin margin--100"></span>
+
+<span class="guide guide--y guide--y24"></span>
+<span class="guide guide--y guide--y48"></span>
+<span class="guide guide--y guide--yXXr"></span>
+
+<span class="guide guide--x guide--x24"></span>
+<span class="guide guide--x guide--x48"></span>
+<span class="guide guide--x guide--x72"></span>
+<span class="guide guide--x guide--x96"></span>
+<span class="guide guide--x guide--x48b"></span>
+</footer>
 
     </body>
 

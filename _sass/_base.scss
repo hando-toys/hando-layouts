@@ -66,13 +66,13 @@ Light = 300 (.fw3)
         display: block;
         float: left;
         overflow: hidden;
-        padding: $base/2;
+        padding: $base/4;
         position: relative;
         width: 25%;
 
         > figure {
             @extend %noselect;
-            @include transitionEase(0.5s, all);
+            @include transitionEase(0.35s, all);
             position: relative;
 
             > img {
@@ -90,26 +90,36 @@ Light = 300 (.fw3)
                 position: absolute;
                 right: $base/2;
                 top: $base/2;
-
             }
         }
         > figcaption {
             @include transitionEase(0.5s, all);
-            @include translate(0px,-3px);
+            //@include translate(0px,-3px);
+            @include flexbox();
+            @include align-content(center);
+            @include align-items(center);
+            @include flex-flow(column nowrap);
+            @include justify-content(center);
             bottom: 0;
             left: 0;
             opacity: 0;
-            padding: $base;
             position: absolute;
             right: 0;
+            text-align: center;
             top: 0;
+
+            > span {
+                padding: 0 $base;
+            }
         }
 
         &:hover {
             > figure {
-                opacity: 0.15;
+                @include scale(1.02);
+                opacity: 0.05;
             }
             > figcaption {
+                @include transitionEase(0.75s, all);
                 opacity: 1;
             }
         }

@@ -5,12 +5,9 @@
 
     <body class="atlas header--{{ page.header }} footer--{{ page.footer }}">
 
-    	<div class="container">
-    		{% include header.html %}
-        	{{ content }}
-    		{% include footer.html %}
-    		{% include guides.html %}
-    	</div>
+    	{% include header.html %}
+        {{ content }}
+    	{% include footer.html %}
 
     </body>
 

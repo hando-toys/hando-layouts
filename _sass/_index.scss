@@ -1,19 +1,19 @@
+.header--fixed,
 .footer--fixed {
+	height: $full;
+	position: relative;
+
 	.container {
-		bottom: 0;
-		left: 0;
-		margin: 0;
-		max-width: initial;
-		position: absolute;
-		right: 0;
-		top: 0;
+		left: 50%;
+		margin-left: -600px;
 	}
 }
 
 .container {
 	margin: 0 auto;
-	max-width: 1400px;
+	max-width: 1200px;
 	position: relative;
+	width: 1200px;
 }
 
 .hero {
@@ -39,7 +39,6 @@
 		cursor: pointer;
 		display: block;
 		height: 65%;
-		text-indent: -9999em;
 		width: 75%;
 	}
 }

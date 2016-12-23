@@ -3,7 +3,7 @@
 		bottom: 0;
 		height: $base*4;
 		position: absolute;
-		width: $full;
+		top: initial;
 		z-index: 9999;
 
 		.footer__menu {
