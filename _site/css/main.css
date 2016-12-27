@@ -84,6 +84,7 @@ body {
   line-height: 18px; }
 
 a {
+  color: #222;
   text-decoration: none; }
   a:visited {
     color: initial; }
@@ -94,11 +95,11 @@ em {
 .serif {
   font-family: 'Origami-Regular', Garamond; }
 
-.text {
+.text, .qty__control .qty__input {
   font-size: 14px;
   font-weight: 400;
   line-height: 22px; }
-  .text strong {
+  .text strong, .qty__control .qty__input strong {
     font-weight: 600; }
 
 .text--h1 {
@@ -133,7 +134,7 @@ em {
       font-size: 12px;
       line-height: 16px; } }
 
-.text--h4, .list.list--h4 li {
+.text--h4, .list.list--h4 li, .btn {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1px;
@@ -334,6 +335,33 @@ Light = 300 (.fw3)
       -o-transition: 0.75s all ease-in-out;
       transition: 0.75s all ease-in-out;
       opacity: 1; }
+
+.product__data .product__body::after {
+  background-color: rgba(0, 255, 0, 0.5);
+  bottom: 0;
+  content: '';
+  height: 24px;
+  left: 0;
+  position: absolute;
+  width: 100%; }
+
+.product__data .product__body::before {
+  background-color: rgba(255, 0, 0, 0.5);
+  content: '';
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+.product__data .product__body::before {
+  background-color: rgba(255, 0, 0, 0.5);
+  content: '';
+  height: 48px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
 
 .guide,
 .margin {
@@ -617,12 +645,16 @@ Light = 300 (.fw3)
     width: 100%; }
   .product__data .product__price {
     border-bottom: solid 1px #222;
-    line-height: 24px;
-    margin-bottom: 12px; }
-  .product__data .product__origin {
-    margin-bottom: 24px; }
+    padding-bottom: 6px; }
+  .product__data .product__title {
+    padding-top: 8px; }
   .product__data .product__body {
-    margin-bottom: 24px; }
+    position: relative;
+    padding: 36px 0; }
+    .product__data .product__body::before {
+      top: -8px; }
+    .product__data .product__body::after {
+      bottom: -6px; }
   .product__data .product__data-pair {
     position: relative; }
     .product__data .product__data-pair > span {
@@ -631,7 +663,32 @@ Light = 300 (.fw3)
       line-height: 24px;
       width: 50%; }
   .product__data .product__action {
-    padding-top: 24px; }
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-content: flex-start;
+    -moz-align-content: flex-start;
+    align-content: flex-start;
+    -ms-flex-line-pack: start;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-flex-flow: row nowrap;
+    -moz-flex-flow: row nowrap;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    padding: 12px 0; }
+    .product__data .product__action .btn {
+      width: 50%; }
 
 .container__block {
   display: block;
@@ -709,43 +766,94 @@ Light = 300 (.fw3)
     top: 24px;
     width: 48px; }
 
-#qty {
-  cursor: pointer; }
-  #qty #qty__input:focus {
-    outline: none; }
-  #qty #qty__input::-webkit-inner-spin-button,
-  #qty #qty__input::-webkit-outer-spin-button {
+.qty {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-content: flex-start;
+  -moz-align-content: flex-start;
+  align-content: flex-start;
+  -ms-flex-line-pack: start;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-flex-flow: row nowrap;
+  -moz-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  width: 50%; }
+
+.qty__label {
+  margin-right: 12px; }
+
+.qty__control {
+  cursor: pointer;
+  display: block;
+  margin-right: 12px;
+  position: relative; }
+  .qty__control .qty__input {
+    background-color: transparent;
+    border: 0;
+    line-height: 12px;
+    text-align: center; }
+    .qty__control .qty__input:focus {
+      outline: none; }
+  .qty__control .qty__input::-webkit-inner-spin-button,
+  .qty__control .qty__input::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0; }
-  #qty #qty__spinner--up,
-  #qty #qty__spinner--down {
+  .qty__control .qty__spinner {
     -webkit-transition: 0.15s all cubic-bezier(0.68, 0, 0.265, 1);
     /* older webkit */
     -webkit-transition: 0.15s all cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -moz-transition: 0.15s all cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -o-transition: 0.15s all cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: 0.15s all cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background-color: transparent;
+    border: solid 1px #222;
     cursor: pointer;
+    display: block;
+    height: 12px;
     margin: 0 auto;
     text-indent: -9999em;
     transform: translate(0, 0) scale(1) rotate(45deg);
+    width: 12px;
     will-change: transform; }
-  #qty #qty__spinner--up:active,
-  #qty #qty__spinner--down:active {
+    .qty__control .qty__spinner.qty__spinner--up {
+      border-bottom: 0;
+      border-right: 0; }
+    .qty__control .qty__spinner.qty__spinner--down {
+      border-left: 0;
+      border-top: 0; }
+  .qty__control .qty__spinner {
     transform: translate(0, 0) scale(0.75) rotate(45deg); }
 
-#btn {
+.btn {
   -webkit-transition: 0.15s all cubic-bezier(0.68, 0, 0.265, 1);
   /* older webkit */
   -webkit-transition: 0.15s all cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -moz-transition: 0.15s all cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -o-transition: 0.15s all cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: 0.15s all cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  background-color: transparent;
+  border: solid 1px #222;
   cursor: pointer;
-  padding-bottom: .45rem; }
-  #btn:focus {
+  font-weight: 600;
+  line-height: 24px;
+  padding: 0 6px;
+  margin: 0; }
+  .btn:focus {
     outline: none; }
-  #btn:active {
+  .btn:active {
     -moz-transform: scale(0.95);
     -o-transform: scale(0.95);
     -ms-transform: scale(0.95);

@@ -64,14 +64,23 @@
 	}
 	.product__price {
 		border-bottom: solid 1px $black;
-		line-height: $base;
-		margin-bottom: $base/2;
+		padding-bottom: 6px;
 	}
-	.product__origin {
-		margin-bottom: $base;
+	.product__title {
+		padding-top: 8px;
 	}
 	.product__body {
-		margin-bottom: $base;
+		@extend %ruler--top-24;
+		@extend %ruler--bottom-24;
+		position: relative;
+		padding: 36px 0;
+
+		&::before {
+			top:-8px;
+		}
+		&::after {
+			bottom:-6px;
+		}
 	}
 	.product__data-pair {
 		@extend %clearfix;
@@ -88,7 +97,16 @@
 		}
 	}
 	.product__action {
-		padding-top: $base;
+		@include flexbox();
+		@include align-content(flex-start);
+		@include align-items(center);
+		@include flex-flow(row nowrap);
+		@include justify-content(flex-start);
+		padding: $base/2 0;
+
+		.btn {
+			width: 50%;
+		}
 	}
 }
 

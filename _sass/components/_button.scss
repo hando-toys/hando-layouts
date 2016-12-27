@@ -1,7 +1,14 @@
-#btn {
+.btn {
+	@extend .text--h4;
 	@include transition(0.15s, all);
+	background-color: transparent;
+	border: solid 1px $black;
 	cursor: pointer;
-	padding-bottom: .45rem;
+	font-weight: 600;
+	line-height: $base;
+	padding: 0 $base/4;
+	margin: 0;
+
 
 	&:focus {
 		outline: none;

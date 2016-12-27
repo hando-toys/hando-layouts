@@ -1,3 +1,60 @@
+%ruler--bottom-12 {
+	&::after {
+		background-color: rgba(0,255,0,0.5);
+		bottom: 0;
+		content:'';
+		height: $base/2;
+		left: 0;
+		position: absolute;
+		width: $full;
+	}
+}
+%ruler--bottom-24 {
+	&::after {
+		background-color: rgba(0,255,0,0.5);
+		bottom: 0;
+		content:'';
+		height: $base;
+		left: 0;
+		position: absolute;
+		width: $full;
+	}
+}
+%ruler--top-12 {
+	&::before {
+		background-color: rgba(255,0,0,0.5);
+		content:'';
+		height: $base/2;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: $full;
+	}
+}
+%ruler--top-24 {
+	&::before {
+		background-color: rgba(255,0,0,0.5);
+		content:'';
+		height: $base;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: $full;
+	}
+}
+%ruler--top-24 {
+	&::before {
+		background-color: rgba(255,0,0,0.5);
+		content:'';
+		height: $base*2;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: $full;
+	}
+}
+
+
 .guide,
 .margin {
 	display: none;

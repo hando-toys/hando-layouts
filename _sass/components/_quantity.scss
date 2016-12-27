@@ -1,28 +1,63 @@
-#qty {
+.qty {
+	@include flexbox();
+	@include align-content(flex-start);
+	@include align-items(center);
+	@include flex-flow(row nowrap);
+	@include justify-content(flex-start);
+	width: 50%;
+}
+
+.qty__label {
+	margin-right: $base/2;
+}
+
+.qty__control {
 	cursor: pointer;
+	display: block;
+	margin-right: $base/2;
+	position: relative;
 
-	#qty__input:focus {
-		outline: none;
+	.qty__input {
+		@extend .text;
+		background-color: transparent;
+		border: 0;
+		line-height: $base/2;
+		text-align: center;
+
+		&:focus {
+			outline: none;
+		}
 	}
-
-	#qty__input::-webkit-inner-spin-button, 
-	#qty__input::-webkit-outer-spin-button { 
+	.qty__input::-webkit-inner-spin-button, 
+	.qty__input::-webkit-outer-spin-button { 
 		-webkit-appearance: none; 
 		margin: 0;
 	}
 
-	#qty__spinner--up,
-	#qty__spinner--down {
+	.qty__spinner {
 		@include transition(0.15s, all);
+		background-color: transparent;
+		border: solid 1px $black;
 		cursor: pointer;
+		display: block;
+		height: $base/2;
 		margin: 0 auto;
 		text-indent: -9999em;
 		transform: translate(0, 0) scale(1) rotate(45deg);
+		width: $base/2;
 		will-change: transform;
+
+		&.qty__spinner--up {
+			border-bottom: 0;
+			border-right: 0;
+		}
+		&.qty__spinner--down {
+			border-left: 0;
+			border-top: 0;
+		}
 	}
 
-	#qty__spinner--up:active,
-	#qty__spinner--down:active {
+	.qty__spinner {
 		transform: translate(0, 0) scale(0.75) rotate(45deg);
 	}
 }
