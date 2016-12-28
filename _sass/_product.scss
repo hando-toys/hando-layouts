@@ -7,6 +7,7 @@
 	z-index: 100;
 
 	.gallery__media {
+		@include transitionEase(0.5s, all);
 		background-position: center;
 		background-size: cover;
 		bottom: 0;
@@ -17,7 +18,7 @@
 
     	@include media-query($on-touch) {
     		background-size: auto 100%;
-    		right: -50%;
+    		right: -25%;
     	}
 	}
 }
@@ -25,7 +26,6 @@
 .product__container {
 	&.product__container--top {
 		@extend %clearfix;
-		background-color: pink;
 		bottom: $base*5;
 		position: absolute;
 		right: 0;
@@ -42,11 +42,9 @@
     	}
 	}
 	&.product__container--extended {
-		background-color: lime;
 	}
 
 	.product__menu {
-		background-color: blue;
 		clear: both;
 		height: $base*5;
 		display: block;
@@ -70,7 +68,6 @@
     	}
 
 		.nav__link {
-			background-color: red;
 			cursor: pointer;
 			float: left;
 			height: $full;
@@ -87,7 +84,6 @@
 		@include align-items(flex-end);
 		@include flex-flow(column nowrap);
 		@include justify-content(center);
-		background-color: yellow;
 		float: left;
 		height: $full;
 		padding-left: $base/2;

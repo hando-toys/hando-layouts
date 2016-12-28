@@ -548,6 +548,10 @@ Light = 300 (.fw3)
   width: 100%;
   z-index: 100; }
   .product__gallery .gallery__media {
+    -webkit-transition: 0.5s all ease-in-out;
+    -moz-transition: 0.5s all ease-in-out;
+    -o-transition: 0.5s all ease-in-out;
+    transition: 0.5s all ease-in-out;
     background-position: center;
     background-size: cover;
     bottom: 0;
@@ -558,10 +562,9 @@ Light = 300 (.fw3)
     @media screen and (max-width: 800px) {
       .product__gallery .gallery__media {
         background-size: auto 100%;
-        right: -50%; } }
+        right: -25%; } }
 
 .product__container.product__container--top {
-  background-color: pink;
   bottom: 120px;
   position: absolute;
   right: 0;
@@ -575,10 +578,7 @@ Light = 300 (.fw3)
     .product__container.product__container--top {
       position: initial;
       width: 100%; } }
-.product__container.product__container--extended {
-  background-color: lime; }
 .product__container .product__menu {
-  background-color: blue;
   clear: both;
   height: 120px;
   display: block; }
@@ -596,7 +596,6 @@ Light = 300 (.fw3)
     .product__container .gallery__nav {
       display: none; } }
   .product__container .gallery__nav .nav__link {
-    background-color: red;
     cursor: pointer;
     float: left;
     height: 100%;
@@ -625,7 +624,6 @@ Light = 300 (.fw3)
   justify-content: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  background-color: yellow;
   float: left;
   height: 100%;
   padding-left: 12px;
