@@ -7,13 +7,17 @@
 
 .header {
 	@extend %clearfix;
-	padding: $base*1.5 $base;
+	padding: $base*1.5 0;
 	position: relative;
+
+	@include media-query($on-small) {
+		padding: $base $base/2;
+    }
 
 	.header__menu {
 		display: block;
 		float: left;
-		position: relative;
+		padding: 0 $base/2;
 		width: 25%;
 	}
 	.header__logo {
@@ -33,6 +37,7 @@
 	.header__cart {
 		display: block;
 		float: right;
+		padding: 0 $base/2;
 		width: 25%;
 	}
 }

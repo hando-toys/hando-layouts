@@ -6,6 +6,11 @@
 	.container {
 		left: 50%;
 		margin-left: -600px;
+
+		@include media-query($on-small) {
+    	    left: initial;
+    	    margin: 0;
+    	}
 	}
 }
 
@@ -14,6 +19,13 @@
 	max-width: 1200px;
 	position: relative;
 	width: 1200px;
+
+	@include media-query($on-small) {
+		margin: 0;
+		max-width: initial;
+		padding: 0 $base/2;
+        width: $full;
+    }
 }
 
 .hero {

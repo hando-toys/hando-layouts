@@ -66,9 +66,15 @@ Light = 300 (.fw3)
         display: block;
         float: left;
         overflow: hidden;
-        padding: $base/4;
+        padding: 0;
         position: relative;
         width: 25%;
+
+        @include media-query($on-small) {
+        }
+        @include media-query($on-touch) {
+            width: $full;
+        }
 
         > figure {
             @extend %noselect;

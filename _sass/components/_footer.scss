@@ -28,7 +28,7 @@
 
 	.footer__menu {
 		float: left;
-		padding-left: $base*2;
+		padding: 0 $base*1.5;
 		width: 25%;
 
 		.list {
@@ -47,7 +47,7 @@
 		bottom: $base*2;
 		height: $base*2;
 		position: absolute;
-		right: $base;
+		right: $base/2;
 		text-indent: -9999em;
 		top: $base;
 		width: $base*2;

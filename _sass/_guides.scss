@@ -1,3 +1,14 @@
+%ruler--bottom-6 {
+	&::after {
+		background-color: rgba(0,255,0,0.5);
+		bottom: 0;
+		content:'';
+		height: $base/4;
+		left: 0;
+		position: absolute;
+		width: $full;
+	}
+}
 %ruler--bottom-12 {
 	&::after {
 		background-color: rgba(0,255,0,0.5);
@@ -17,6 +28,28 @@
 		height: $base;
 		left: 0;
 		position: absolute;
+		width: $full;
+	}
+}
+%ruler--bottom-48 {
+	&::after {
+		background-color: rgba(0,255,0,0.5);
+		bottom: 0;
+		content:'';
+		height: $base*2;
+		left: 0;
+		position: absolute;
+		width: $full;
+	}
+}
+%ruler--top-6 {
+	&::before {
+		background-color: rgba(255,0,0,0.5);
+		content:'';
+		height: $base/4;
+		left: 0;
+		position: absolute;
+		top: 0;
 		width: $full;
 	}
 }
@@ -42,7 +75,7 @@
 		width: $full;
 	}
 }
-%ruler--top-24 {
+%ruler--top-48 {
 	&::before {
 		background-color: rgba(255,0,0,0.5);
 		content:'';
@@ -57,7 +90,7 @@
 
 .guide,
 .margin {
-	display: none;
+	//display: none;
 }
 
 .guide {
@@ -105,6 +138,9 @@
 		&.guide--y24 {
 			left: $base;
 		}
+		&.guide--y36 {
+			left: $base*1.5;
+		}
 		&.guide--y48 {
 			left: $base*2;
 		}
@@ -114,7 +150,7 @@
 		}
 		&.guide--yXXr {
 			left: initial;
-			right: 47px;
+			right: 35px;
 		}
 	}
 	&.guide--x {
@@ -164,7 +200,7 @@
 }
 
 .margin {
-	background-color: rgba(255,0,0,0.5);
+	background-color: rgba(255,0,255,0.5);
 	left: 0;
 	height: $full;
 	margin-left: -$base/2;

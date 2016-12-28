@@ -1,116 +1,157 @@
 .product__gallery {
+	background-color: $black;
 	display: block;
 	height: $full;
 	overflow: hidden;
 	width: $full;
 	z-index: 100;
 
-	.product__image {
-		background-position: 100% center;
-		background-repeat: no-repeat;
-		background-size: 125% auto;
+	.gallery__media {
+		background-position: center;
+		background-size: cover;
 		bottom: 0;
 		left: 0;
 		position: absolute;
 		right: 0;
 		top: 0;
-	}
 
-	.gallery__frame {
-		@include flexbox();
-		@include align-content(flex-start);
-		@include align-items(flex-start);
-		@include flex-flow(column wrap);
-		@include justify-content(center);
-		//background-color: rgba(0,255,0,0.1);
-		height: $full;
-
-		.gallery__trigger {
-			background-color: transparent;
-			border: solid 1px $black;
-			border-radius: 50%;
-			height: $base/2;
-			margin: $base/2 26px;
-			text-indent: -9999em;
-			width: $base/2;
-		}
+    	@include media-query($on-touch) {
+    		background-size: auto 100%;
+    		right: -50%;
+    	}
 	}
 }
 
-.product__data {
-	height: $full;
-	position: absolute;
-	top: 0;
-	z-index: 999;
+.product__container {
+	&.product__container--top {
+		@extend %clearfix;
+		background-color: pink;
+		bottom: $base*5;
+		position: absolute;
+		right: 0;
+		top: $base*5;
+		z-index: 999;
 
-	.data__container {
+		@include media-query($on-small) {
+			bottom: $base*4;
+			top: $base*4;
+    	}
+    	@include media-query($on-touch) {
+    		position: initial;
+			width: $full;
+    	}
+	}
+	&.product__container--extended {
+		background-color: lime;
+	}
+
+	.product__menu {
+		background-color: blue;
+		clear: both;
+		height: $base*5;
+		display: block;
+
+		@include media-query($on-small) {
+			height: $base*4;
+    	}
+	}
+
+	.gallery__nav {
+		@extend %clearfix;
+		float: left;
+		height: $full;
+		width: 75%;
+
+		@include media-query($on-small) {
+			width: 66%;
+    	}
+    	@include media-query($on-touch) {
+    		display: none;
+    	}
+
+		.nav__link {
+			background-color: red;
+			cursor: pointer;
+			float: left;
+			height: $full;
+			width: 50%;
+
+			&:active {
+			}
+		}
+	}
+
+	.product__data {
 		@include flexbox();
 		@include align-content(flex-start);
 		@include align-items(flex-end);
 		@include flex-flow(column nowrap);
 		@include justify-content(center);
-		bottom: 0;
+		background-color: yellow;
+		float: left;
+		height: $full;
 		padding-left: $base/2;
-		padding-right: $base;
-		position: absolute;
-		right: 0;
-		top: 0;
+		padding-right: $base/2;
 		width: 25%;
-	}	
 
-	.product__block {
-		display: block;
-		width: $full;
-	}
-	.product__price {
-		border-bottom: solid 1px $black;
-		padding-bottom: 6px;
-	}
-	.product__title {
-		padding-top: 8px;
-	}
-	.product__body {
-		@extend %ruler--top-24;
-		@extend %ruler--bottom-24;
-		position: relative;
-		padding: 36px 0;
+		@include media-query($on-small) {
+			width: 34%;
+    	}
+    	@include media-query($on-touch) {
+			width: $full;
+    	}
 
-		&::before {
-			top:-8px;
-		}
-		&::after {
-			bottom:-6px;
-		}
-	}
-	.product__data-pair {
-		@extend %clearfix;
-		position: relative;
-
-		> span {
+		.product__block {
 			display: block;
-			float: left;
-			line-height: $base;
-			width: 50%;
+			width: $full;
 		}
-		.pair__variable {
-			@extend %noselect;
+		.product__price {
+			border-bottom: solid 1px $black;
+			padding-bottom: 6px;
 		}
-	}
-	.product__action {
-		@include flexbox();
-		@include align-content(flex-start);
-		@include align-items(center);
-		@include flex-flow(row nowrap);
-		@include justify-content(flex-start);
-		padding: $base/2 0;
-
-		.btn {
-			width: 50%;
+		.product__title {
+			padding-top: 8px;
 		}
-	}
+		.product__body {
+			margin-bottom: 0;
+			position: relative;
+			padding: $base 0;
+		}
+	
+		.product__data-pair {
+			@extend %clearfix;
+			position: relative;
+			width: $full;
+	
+			.pair__var,
+			.pair__val {
+				display: block;
+				float: left;
+			}
+			.pair__var {
+				@extend %noselect;
+				width: 40%;
+			}
+			.pair__val {
+				width: 60%;
+			}
+		}
+	
+		.product__action {
+			@include flexbox();
+			@include align-content(flex-start);
+			@include align-items(center);
+			@include flex-flow(row nowrap);
+			@include justify-content(flex-start);
+			padding: $base/2 0 0 0;
+	
+			.btn {
+				width: 50%;
+			}
+		}
+	}	
 }
 
-.container__block {
-	display: block;
-	height: 400px;
+.product__extended {
+	background-color: red;
 }
