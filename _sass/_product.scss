@@ -1,10 +1,8 @@
+
 .product__gallery {
-	background-color: $black;
 	display: block;
-	height: $full;
-	overflow: hidden;
+	position: relative;
 	width: $full;
-	z-index: 100;
 
 	.gallery__media {
 		@include transitionEase(0.5s, all);
@@ -15,15 +13,256 @@
 		position: absolute;
 		right: 0;
 		top: 0;
+	}
+
+	.container--gallery {
+		@include translate(-50%,0);
+		bottom: 0;
+		left: 50%;
+		position: absolute;
+		top: $base*4;
+
+		@include media-query($on-small) {
+			@include translate(0,0);
+			left: 0;
+    	}
+	}
+
+	.gallery__nav,
+	.product__menu,
+	.product__data--default {
+		position: absolute;
+	}
+
+	.gallery__nav {
+		@extend %clearfix;
+		bottom: 0;
+		left: 0;
+		top: 0;
+		width: 75%;
+
+		@include media-query($on-small) {
+			width: 66%;
+    	}
+    	@include media-query($on-touch) {
+			width: $full;
+    	}
+
+    	.nav__link {
+    		@include transitionEase(0.3s, background-color);
+    		background-color: transparent;
+			cursor: pointer;
+			float: left;
+			height: $full;
+			width: 50%;
+
+			&.nav__link--prev {
+				width: 34%;
+			}
+			&.nav__link--next {
+				width: 66%;
+			}
+
+			&:active {
+				background-color: rgba(255,255,255,0.05);
+			}
+		}
+
+		.nav__markers {
+			@include flexbox();
+			@include align-content(flex-start);
+			@include align-items(center);
+			@include flex-flow(column nowrap);
+			@include justify-content(center);
+			position: absolute;
+			height: $full;
+			width: $base*1.5;
+
+			.nav__marker {
+				border: solid 1px $black;
+				border-radius: 50%;
+				display: block;
+				margin: $base/4;
+				height: $base/2;
+				width: $base/2;
+			}
+		}
+	}
+	.product__menu {
+		@extend %clearfix;
+		bottom: 0;
+		height: $base*4;
+		padding: $base 0;
+		width: $full;
+
+    	@include media-query($on-touch) {
+			background-color: $black;
+    	}
+
+    	.menu__item {
+    		display: block;
+    		float: left;
+    		height: $base*2;
+
+    		&.menu__item--expand {
+    			margin-left: 25%;
+    			text-indent: -9999em;
+    			width: 50%;
+
+    			&::before,
+    			&::after {
+    				content: '';
+    				position: absolute;
+    			}
+    			&::before {
+    				@include rotate(45);
+    				border-bottom: solid 1px $black;
+    				border-right: solid 1px $black;
+    				height: $base;
+    				left: 50%;
+    				margin-left: -$base/2;
+    				top: $base/2;
+    				width: $base;
+    			}
+    		}
+    	}
+	}
+	.product__data {
+
+		&.product__data--default {
+			@include flexbox();
+			@include align-content(flex-start);
+			@include align-items(flex-start);
+			@include flex-flow(column nowrap);
+			@include justify-content(center);
+			bottom: $base*4;
+			right: 0;
+			padding: 0 $base/2;
+			top: 0;
+			width: 25%;
+		}
+
+		&.product__data--mobile {
+			display: none;
+		}
+
+		@include media-query($on-small) {
+			width: 34%;
+    	}
+    	@include media-query($on-touch) {
+			display: none;
+    	}
+
+    	.product__block {
+			display: block;
+			width: $full;
+		}
+		.product__price {
+			border-bottom: solid 1px $black;
+			padding-bottom: 6px;
+		}
+		.product__title {
+			padding-top: 8px;
+		}
+		.product__body {
+			margin-bottom: 0;
+			position: relative;
+			padding: $base 0;
+		}
+	
+		.product__data-pair {
+			@extend %clearfix;
+			position: relative;
+			width: $full;
+	
+			.pair__var,
+			.pair__val {
+				display: block;
+				float: left;
+				width: 50%;
+			}
+			.pair__var {
+				@extend %noselect;
+			}
+			.pair__val {
+			}
+		}
+	
+		.product__action {
+			@include flexbox();
+			@include align-content(flex-start);
+			@include align-items(center);
+			@include flex-flow(row nowrap);
+			@include justify-content(flex-start);
+			padding: $base/2 0 0 0;
+	
+			.btn {
+				width: 50%;
+			}
+		}
+	}
+}
+
+.product__data--mobile {
+	display: none;
+
+    @include media-query($on-touch) {
+		display: block;
+    }
+
+	> .container--product {
+		background-color: violet;
+	}
+}
+
+.product__lower {
+	> .container--product {
+		background-color: violet;
+	}
+}
+
+.product__extended {
+	background-color: blue;
+
+	> .container--extended {
+
+	}
+}
+
+
+
+
+
+/*.product__gallery {
+	background-color: $black;
+	display: none;
+	height: $full;
+	overflow: hidden;
+	width: $full;
+	z-index: 100;
+
+	.gallery__media {
+		@include transitionEase(0.5s, all);
+		background-position: center;
+		background-size: cover;
+		bottom: 0;
+		display: none;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
 
     	@include media-query($on-touch) {
     		background-size: auto 100%;
-    		right: -25%;
+    		right: -37.5%;
     	}
 	}
 }
 
 .product__container {
+	display: none;
+
+
 	&.product__container--top {
 		@extend %clearfix;
 		bottom: $base*5;
@@ -37,20 +276,53 @@
 			top: $base*4;
     	}
     	@include media-query($on-touch) {
+    		bottom: 0;
     		position: initial;
-			width: $full;
     	}
 	}
 	&.product__container--extended {
+		.column {
+			margin-bottom: $base*8;
+			padding-top: $base*2;
+			width: 50%;
+
+			> p {
+				@extend .text;
+				margin-bottom: 22px;
+				padding: 0 $base/4;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
 	}
 
 	.product__menu {
 		clear: both;
 		height: $base*5;
 		display: block;
+		padding: $base*2 0;
 
 		@include media-query($on-small) {
 			height: $base*4;
+    	}
+
+    	.product__block {
+    		height: $base;
+
+    		&.product__block--share {
+    			background-color: red;
+    			width: 25%;
+    		}
+    		&.product__block--playback {
+    			background-color: yellow;
+    			width: 50%;
+    		}
+    		&.product__block--more {
+    			background-color: green;
+    			width: 25%;
+    		}
     	}
 	}
 
@@ -58,24 +330,16 @@
 		@extend %clearfix;
 		float: left;
 		height: $full;
+		position: relative;
 		width: 75%;
 
 		@include media-query($on-small) {
 			width: 66%;
     	}
     	@include media-query($on-touch) {
-    		display: none;
+    		height: 50%;
+    		width: $full;
     	}
-
-		.nav__link {
-			cursor: pointer;
-			float: left;
-			height: $full;
-			width: 50%;
-
-			&:active {
-			}
-		}
 	}
 
 	.product__data {
@@ -123,13 +387,12 @@
 			.pair__val {
 				display: block;
 				float: left;
+				width: 50%;
 			}
 			.pair__var {
 				@extend %noselect;
-				width: 40%;
 			}
 			.pair__val {
-				width: 60%;
 			}
 		}
 	
@@ -146,8 +409,4 @@
 			}
 		}
 	}	
-}
-
-.product__extended {
-	background-color: red;
-}
+}*/

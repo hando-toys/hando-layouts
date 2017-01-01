@@ -35,6 +35,8 @@ Light = 300 (.fw3)
     font-stretch: normal;
 }
 
+$container: 1200px;
+
 .atlas { font-family: 'Atlas Grotesk', 'Helvetica Neue', sans-serif; }
 
 .list {
@@ -58,15 +60,43 @@ Light = 300 (.fw3)
     }
 }
 
+.label--section {
+    border-bottom: solid 1px $black;
+    margin-bottom: $base;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: $container;
+    position: relative;
+    width: $container;
+
+    @include media-query($on-small) {
+        margin: 0;
+        max-width: initial;
+        width: $full;
+    }
+}
+
+.columns {
+    @extend %clearfix;
+    
+    .column {
+        float: left;
+        padding: 0 $base/2;
+    }
+}
+
 .grid {
     @extend %clearfix;
+    padding: $base 0;
     position: relative;
 
     .grid__item {
         display: block;
         float: left;
         overflow: hidden;
-        padding: 0;
+        padding: $base/4;
         position: relative;
         width: 25%;
 

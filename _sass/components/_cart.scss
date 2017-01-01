@@ -4,6 +4,14 @@
 	padding: 0 $base*2.5;
 	position: relative;
 
+	@include media-query($on-touch) {
+    	background-color: blue;
+    	
+    	.cart__label {
+    		display: none;
+    	}
+    }
+
 	.cart__count {
 		display: block;
 		line-height: $base*2;

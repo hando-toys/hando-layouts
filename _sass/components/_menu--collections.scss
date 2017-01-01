@@ -35,6 +35,10 @@
 		width: $full;
 		z-index: 9999;
 
+    	@include media-query($on-touch) {
+    		background-color: lime;
+    	}
+
 		&.visible {
 			display: block;
 		}

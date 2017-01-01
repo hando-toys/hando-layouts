@@ -1,5 +1,7 @@
 .header--fixed {
 	.header {
+		@include translate(-50%,0);
+		left: 50%;
 		position: absolute;
 		z-index: 9999;
 	}
@@ -13,24 +15,38 @@
 	@include media-query($on-small) {
 		padding: $base $base/2;
     }
+    @include media-query($on-touch) {
+    }
 
 	.header__menu {
 		display: block;
 		float: left;
 		padding: 0 $base/2;
 		width: 25%;
+
+    	@include media-query($on-touch) {
+    	}
 	}
 	.header__logo {
 		display: block;
 		height: $base*2;
 		float: left;
 		text-align: center;
+		overflow: hidden;
+		position: relative;
 		width: 50%;
 
+    	@include media-query($on-touch) {
+    		width: 50%;
+    	}
+
 		svg {
-			@include scale(0.35);
 			fill: black;
 			height: $full;
+			left: 50%;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%,-50%) scale(0.35);
 			width: auto;
 		}
 	}

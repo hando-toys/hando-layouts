@@ -1,7 +1,10 @@
 .footer--fixed {
 	.footer {
+		@include translate(-50%,0);
+		background-color: pink;
 		bottom: 0;
 		height: $base*4;
+		left: 50%;
 		position: absolute;
 		top: initial;
 		z-index: 9999;

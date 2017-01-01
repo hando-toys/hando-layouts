@@ -1,5 +1,12 @@
 $(document).ready(function(){
-
-	// Button
-    
+	resizeDiv();
 });
+
+window.onresize = function(event) {
+	resizeDiv();
+}
+
+function resizeDiv() {
+	vph = $(window).height();
+	$('.product__gallery').height(vph);
+}
