@@ -7,6 +7,15 @@ $(document).ready(function() {
         $(target).toggleClass('visible');
     });
 
+    $('.toggle--drawer').click(function(){
+        console.log('clicked');
+        $(this).toggleClass('active');
+        $('.header__drawer').toggleClass('visible');
+        $('.header').toggleClass('show--drawer');
+    });
+
+
+
     // Quantity
 	//$('#qty__input').focus();
 	$('.qty__spinner--up').click(function(){

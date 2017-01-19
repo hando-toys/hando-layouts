@@ -1,7 +1,5 @@
-.collection {
-	.grid__item {
-		.text--h5 {
-			margin-bottom: 3px;
-		}
-	}
+.grid {
+	&.grid--collection {
+    	padding: $base 0;
+	}	
 }

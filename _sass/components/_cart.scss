@@ -20,6 +20,7 @@
 		text-align: center;
 		top: 0;
 		width: $base*2;
+		z-index: 1000;
 
 		.cart__frame {
 			@include rotate(45);

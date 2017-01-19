@@ -1,6 +1,6 @@
 <header class="container header">
 	<span class="header__menu">
-		{% include components/collections.html %}
+		<a href="#" class="toggle--drawer text--h4">Shop</a>
 	</span>
 	<a href="/index.html" class="header__logo">
 		{% include assets/hando.svg %}
@@ -8,4 +8,15 @@
 	<span class="header__cart">
 		{% include components/cart.html %}
 	</span>
+
+
+	<div class="header__drawer">
+		<ul class="list list--h4 list--collections">
+			<li><a href="/collections">Category 1</a></li>
+			<li><a href="/collections">Category 2</a></li>
+			<li><a href="/collections">Category 3</a></li>
+			<li><a href="/collections">Category 4</a></li>
+			<li><a href="/collections">Category 5</a></li>
+		</ul>
+	</div>
 </header>
